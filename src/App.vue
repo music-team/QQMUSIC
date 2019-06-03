@@ -1,29 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <index-header></index-header>
+        <router-view></router-view>
+        <player></player>
     </div>
-    <router-view/>
-  </div>
 </template>
+<script>
+    import IndexHeader from '@/components/IndexHeader'
+    import Player from '@/components/Player'
+    import '@/assets/css/reset.css'  //样式
+    import '@/assets/font/iconfont.css'
+    
+ 
+    
+  
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    export default {
+        components:{
+            IndexHeader,
+            Player
+        }
     }
-  }
-}
+</script>
+<style>
+     /*隐藏滚动条*/
+    ::-webkit-scrollbar{
+        display:none;
+    }
 </style>
